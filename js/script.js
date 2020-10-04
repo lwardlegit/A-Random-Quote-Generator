@@ -42,19 +42,18 @@ const quotesArray=[
 ]
 
 /***
- * `getRandomQuote` function
+ * `getRandomQuote` function: returns a random quote object from quotesArray
 ***/
-function newQuote(){
-  let currentQuote = quotesArray[Math.floor(Math.random() * quotesArray.length)]; 
-  printQuote(currentQuote)
-
+function getRandomQuote(){
+  return quotesArray[Math.floor(Math.random() * quotesArray.length)]; 
 }
 
 
 /***
- * `printQuote` function
+ * `printQuote` function: calls getRandomQuote() to get a quoteobject then assigns the objects attributes to their matching placeholder elements
 ***/
-function printQuote(currentQuote){
+function printQuote(){
+  let currentQuote = getRandomQuote()
 
   document.getElementById("quote").innerHTML= currentQuote.quote
   document.getElementById("source").innerHTML= currentQuote.source
@@ -69,4 +68,4 @@ function printQuote(currentQuote){
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", newQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
